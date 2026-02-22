@@ -24,9 +24,7 @@ I put together this Colab notebook so you can spin up a fully multimodal AI comp
 
 ## 🎬 See It In Action: Johnny Silverhand Clone
 <div align="center">
-  <video src="assets/Example.mp4" width="400" controls>
-    test
-  </video>
+  <video src="https://github.com/user-attachments/assets/9ab8e780-2626-4d5e-8b3c-dbb4e7f9e841" width="600" controls></video>
 </div>
 
 ---
@@ -86,6 +84,24 @@ You need an XTTS model folder containing a `config.json`, the model weights, and
 * `/voice_mode` - Toggle between text and voice message replies.
 * `/reset` - Regenerate the last response if you didn't like what the AI said.
 * `/reset_memory` - Wipe the current conversation context and start fresh.
+
+---
+
+## 🤝 Support & Feedback
+
+<h2 align="center">
+  If you had fun building your own AI companion or just found this project useful, I’d massively appreciate a ⭐️ Star on this repository! <br><br>
+  It helps more people discover the project and keeps me motivated to push more cool AI stuff. ♥ <3
+</h2>
+
+<br>
+
+**Something broke? Got a killer feature idea?** Don't be shy, let's make this bot even better together:
+* 🐛 Open an **Issue** right here on GitHub if you catch any bugs or OOM errors.
+* 💬 Hit me up on Telegram: [@Just_Xirexxx](https://t.me/Just_Xirexxx)
+* 📧 Drop me an email: [xyroset+dev@gmail.com]([xyroset+dev@gmail.com)
+
+Pull requests and forks are always welcome. Let's build the ultimate open-source pocket AI together! 🚀
 
 ---
 
