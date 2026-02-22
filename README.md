@@ -48,10 +48,15 @@ You need an XTTS model folder containing a `config.json`, the model weights, and
 3. **Open Colab:** Click that blue "Open in Colab" badge at the top of this page. Make sure the runtime is set to **T4 GPU** (`Runtime` -> `Change runtime type`).
 4. **Hide your keys:** Click the 🔑 **Secrets** tab on the left sidebar in Colab. Add `BOT_API` and `GROQ_API`, paste your keys, and turn ON "Notebook access" for both. (Never paste keys directly into the code!)
 5. **Run the Blocks:**
-   * Run **Block 1** (it'll install the required libraries and restart the session).
-   * Fill out your folder paths and tweak the AI sliders in **Block 2**.
-   * Run **Block 3** (this loads the heavy models into memory, so go grab a coffee ☕).
-   * Run **Block 4**. Once the console says `Bot is running!`, jump into Telegram and type `/start`.
+   * Run **Block 1 (Install)**. It will download the required libraries and automatically restart the session.
+   * Set up **Block 2 (Settings)**. Paste your folder paths and tweak the AI sliders.
+     * ⚠️ **Important LLM Loading Settings:** To avoid Out Of Memory (OOM) errors on a 15GB T4 GPU, adjust the Unsloth parameters based on your model:
+       * **7B-9B Models (Llama-3, DeepSeek):** `LLM_MAX_SEQ_LENGTH` = 4096, `LLM_LOAD_IN_4BIT` = True.
+       * **12B Models (Mistral-Nemo):** `LLM_MAX_SEQ_LENGTH` = 2048, `LLM_LOAD_IN_4BIT` = True (Heavy!).
+       * **1.5B-3B Models (Qwen):** `LLM_MAX_SEQ_LENGTH` = 8192, `LLM_LOAD_IN_4BIT` = False.
+   * Run **Block 3 (Load Models)**. This loads the heavy weights into the GPU and spins up the TTS server, so go grab a coffee ☕.
+   * Customize **Block 4 (Personalization)**. Here you can completely change the bot's core personality (`SYSTEM_INSTRUCTION`), adjust the typing debounce timer, and translate all UI messages (like "Typing..." or "Generating voice...") to fit your style.
+   * Run **Block 5 (Start Telegram bot)**. Once the console says `Bot is running!`, jump into Telegram and type `/start`.
 
 ---
 
