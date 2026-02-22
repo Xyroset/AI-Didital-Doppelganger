@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="assets/Preview.png" height="400">
+</div>
+
 # **🤖 Personal AI Telegram Bot (LLM + Voice + Vision)**
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Xyroset/AI-Didital-Doppelganger/blob/main/Personal_AI_Telegram_Bot_(LLM_%2B_Voice_%2B_Vision).ipynb)
