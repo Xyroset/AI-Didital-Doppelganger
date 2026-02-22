@@ -22,7 +22,7 @@ I put together this Colab notebook so you can spin up a fully multimodal AI comp
 Here is the tech stack powering the bot:
 * **[Unsloth](https://github.com/unslothai/unsloth):** Makes running Heavy LLMs super fast and efficient on Colab's T4 GPU.
 * **[Coqui XTTS](https://github.com/coqui-ai/TTS):** The magic behind the text-to-speech and zero-shot voice cloning.
-* **[Groq API](https://console.groq.com/):** Does the heavy lifting for lightning-fast image recognition (`llama-3.2-11b-vision-preview`) and audio transcription (`whisper-large-v3-turbo`).
+* **[Groq API](https://console.groq.com/):** Does the heavy lifting for lightning-fast image recognition (`meta-llama/llama-4-scout-17b-16e-instruct`) and audio transcription (`whisper-large-v3-turbo`).
 * **[Aiogram](https://docs.aiogram.dev/):** The engine keeping the Telegram bot running smoothly.
 
 ---
@@ -45,16 +45,16 @@ You need an XTTS model folder containing a `config.json`, the model weights, and
 
 1. **Get your Tokens:** Grab a bot token from [@BotFather](https://t.me/BotFather) on Telegram and a free API key from the [Groq Console](https://console.groq.com/).
 2. **Drive Setup:** Upload your LLM and TTS model folders to your Google Drive.
-3. **Open Colab:** Click that blue "Open in Colab" badge at the top of this page. Make sure the runtime is set to **T4 GPU** (`Runtime` -> `Change runtime type`).
+3. **Open Colab:** Click that blue "Open in Colab" badge at the top of this page. Make sure the runtime is set to **T4 GPU** (`Runtime` => `Change runtime type`).
 4. **Hide your keys:** Click the 🔑 **Secrets** tab on the left sidebar in Colab. Add `BOT_API` and `GROQ_API`, paste your keys, and turn ON "Notebook access" for both. (Never paste keys directly into the code!)
 5. **Run the Blocks:**
    * Run **Block 1 (Install)**. It will download the required libraries and automatically restart the session.
    * Set up **Block 2 (Settings)**. Paste your folder paths and tweak the AI sliders.
      * ⚠️ **Important LLM Loading Settings:** To avoid Out Of Memory (OOM) errors on a 15GB T4 GPU, adjust the Unsloth parameters based on your model:
-       * **7B-9B Models (Llama-3, DeepSeek):** `LLM_MAX_SEQ_LENGTH` = 4096, `LLM_LOAD_IN_4BIT` = True.
-       * **12B Models (Mistral-Nemo):** `LLM_MAX_SEQ_LENGTH` = 2048, `LLM_LOAD_IN_4BIT` = True (Heavy!).
+       * **7B-9B Models (Llama-3, DeepSeek):** `LLM_MAX_SEQ_LENGTH` = 2048, `LLM_LOAD_IN_4BIT` = True.
+       * **12B Models (Mistral-Nemo):** `LLM_MAX_SEQ_LENGTH` = 2048, `LLM_LOAD_IN_4BIT` = True.
        * **1.5B-3B Models (Qwen):** `LLM_MAX_SEQ_LENGTH` = 8192, `LLM_LOAD_IN_4BIT` = False.
-   * Run **Block 3 (Load Models)**. This loads the heavy weights into the GPU and spins up the TTS server, so go grab a coffee ☕.
+   * Run **Block 3 (Load Models)**. This loads the heavy weights into the GPU and spins up the TTS server.
    * Customize **Block 4 (Personalization)**. Here you can completely change the bot's core personality (`SYSTEM_INSTRUCTION`), adjust the typing debounce timer, and translate all UI messages (like "Typing..." or "Generating voice...") to fit your style.
    * Run **Block 5 (Start Telegram bot)**. Once the console says `Bot is running!`, jump into Telegram and type `/start`.
 
