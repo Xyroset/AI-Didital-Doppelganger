@@ -22,6 +22,23 @@ I put together this Colab notebook so you can spin up a fully multimodal AI comp
 
 ---
 
+## 🎬 See It In Action: Johnny Silverhand Clone
+<div align="center">
+  <video src="assets/Example.mp4" width="400" controls>
+    test
+  </video>
+</div>
+
+---
+
+**What it took to build this specific clone:**
+* 🧠 **LLM Dataset:** Only **120 lines of dialogue** used for fine-tuning the personality.
+* 🗣️ **TTS Audio:** Just a **30-second clean audio clip** for the voice engine.
+
+⚠️ **Pro Tip on Quality:** This example was made with very minimal data to show how accessible this is. However, the final quality of your bot's personality and voice depends *entirely* on the volume and quality of your dataset. A larger text history and a studio-quality audio sample (without background noise or music) will make your digital clone sound incredibly realistic!
+
+---
+
 ## 🛠️ Under the Hood
 Here is the tech stack powering the bot:
 * **[Unsloth](https://github.com/unslothai/unsloth):** Makes running Heavy LLMs super fast and efficient on Colab's T4 GPU.
